@@ -5,25 +5,36 @@ using namespace std;
 class student
 {
 public:
-    string s_name;
-    string s_id;
 
+// 姓名 可读可写
     void set_name()
     {
         cout << "输入姓名：" ;
         cin >> s_name;
     }
+    string get_name()
+    {
+        return s_name;
+    }
 
+// 学号 只写
     void set_number()
     {
         cout << "输入学号：" ;
         cin >> s_id;
     }
 
-    void print_student()
+// 老师 只读
+    string get_teacher()
     {
-        cout << "姓名：" << s_name << "\t" << "学号：" << s_id << endl;
+        return t_name;
     }
+
+
+private:
+    string s_name;
+    string s_id;
+    string t_name = "LH";
 };
 
 int main()
@@ -31,8 +42,9 @@ int main()
     student s1;
 
     s1.set_name();
+    cout << s1.get_name() << endl;
     s1.set_number();
-    s1.print_student();
+    cout << s1.get_teacher() << endl;
 
     system("pause");
     return 0;
